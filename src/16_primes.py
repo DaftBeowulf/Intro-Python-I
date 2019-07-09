@@ -1,12 +1,8 @@
 
-
-import sys
-
-
 def isPrime(num):
     # returns error message if no argument supplied
-    if not num:
-        return "This function requires a single integer as input."
+    if not num or not isinstance(num, int) or num <= 0:
+        return "This function requires a positive integer as input."
     num = int(num)
     # checks if num is divisible by any number greater than 1 and less than itself
     # will return false if num is divisible by any such number
@@ -16,4 +12,5 @@ def isPrime(num):
     return True
 
 
-print(isPrime(sys.argv[1]))
+x = input('Enter a number to see if it\'s prime or not:')
+print(isPrime(x))
