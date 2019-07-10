@@ -22,3 +22,14 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+c = calendar.TextCalendar()
+
+if len(sys.argv) > 2:
+    print(c.formatmonth(int(sys.argv[2]), int(sys.argv[1])))
+elif len(sys.argv) > 1:
+    print(c.formatmonth(int(datetime.now().year), int(sys.argv[1])))
+else:
+    print(
+        "\nThis program accepts [month] and [year] as arguments, but requires at least [month] to execute.\n")
+    sys.exit()
